@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,8 +9,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MyController {
 
+    private GreetingService greetingService;
+
+    public MyController(final GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String hello() {
         System.out.println("Hello!");
-    return "foo";
+    return greetingService.sayGreeting();
     }
 }
