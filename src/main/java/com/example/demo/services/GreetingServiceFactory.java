@@ -9,6 +9,11 @@ public class GreetingServiceFactory {
         this.greetingRepository = greetingRepository;
     }
 
+    /**
+     * Factory method
+     * @param lang
+     * @return
+     */
     public GreetingService createGreetingService(String lang) {
 
         switch (lang){
